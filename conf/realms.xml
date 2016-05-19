@@ -138,5 +138,9 @@ IMPORTANT NOTE: When using a prefix different than the ROOT prefix, then make su
 <realm id="test" mount-point="/test/">
   <config src="@REALMS_DIR@/test/yanel/"/>
 </realm>
+<realm id="zwischengas" mount-point="/" root="true">
+  <config src="/Users/baszero/development/git/_upgrade/zwischengas/" />
+</realm>
+
 
 </realms>

@@ -3,11 +3,13 @@
 SCRIPT_DIR=$PWD
 #SCRIPT_DIR=$PWD/`dirname $0`
 
-JAVA_HOME_MACOSX=/System/Library/Frameworks/JavaVM.framework/Home
-JAVA_HOME_MACOSX_YOSEMITE=/System/Library/Frameworks/JavaVM.framework/Versions/Current/commands/java_home
+#JAVA_HOME_MACOSX=/System/Library/Frameworks/JavaVM.framework/Home
+JAVA_HOME_MACOSX=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home
 
 # ----- Check for JAVA_HOME
-JAVA_HOME="$JAVA_HOME"
+JAVA_HOME="$JAVA_HOME_MACOSX"
+export JAVA_HOME
+
 if [ "$JAVA_HOME" = "" ];then
   echo "ERROR: No JAVA_HOME set!"
   echo "       Have you installed JDK (Java Development Kit)? If so, then set JAVA_HOME ..."
@@ -51,7 +53,10 @@ if [ "$JAVA_HOME" = "" ];then
 fi
 
 # ----- Check Java version
-# TODO: ....
+java -version
+echo "JAVA HOME = "$JAVA_HOME
+echo "USING java binary at"
+which java
 
 # ----- Set Environment Variables
 unset ANT_HOME

@@ -55,7 +55,7 @@
       <mapper type="flatten"/>
     </copy>
 
-    <antcall target="generate-javadoc"/>
+    <!--<antcall target="generate-javadoc"/>-->
 
     <ant antfile="${yanel.source.home}/build/build-resource-types.xml" target="copy-resources-dependencies"/>
 
