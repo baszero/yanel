@@ -100,6 +100,7 @@ elif [ "$1" = "build" ]; then
 if [ "$1" = "-f" ];then
   echo "INFO: Build using -f ..."
   # TODO: Pass all parameters (not just 7 or rather 6)
+  echo "+++ Executing: $OUR_ANT -f $2 $3 $4 $5 $6 $7 -Dyanel.source.home=$SCRIPT_DIR"
   $OUR_ANT -f $2 $3 $4 $5 $6 $7 -Dyanel.source.home=$SCRIPT_DIR
   error=$?
   if [ $error -ne 0 ];then

@@ -120,7 +120,7 @@
   </target>
 
   <target name="compile" description="Compile Java classes" depends="init">
-
+	<echo>+++++++ Yanel compile</echo>
     <mkdir dir="${realm.classes.dir}"/>
     <touch> <!-- WORKAROUND: See the bottom of http://ant.apache.org/manual/Tasks/javac.html or http://lists.wyona.org/pipermail/yanel-development/2011-February/005447.html -->
       <fileset dir="${realm.java.dir}" includes="**/package-info.java"/>
@@ -174,6 +174,7 @@
 
   <!-- Deploy jar file for this realm into local webapp libs directory -->
   <target name="deploy-jar" depends="compile">
+  	<echo>+++ Executing deploy-jar</echo>
     <copy todir="${tomcat1.home.dir}/webapps/${servlet.context.prefix}/WEB-INF/lib" file="${realm.lib.dir}/yanel-realm-${realm.name}-${realm.version}.jar">
     </copy>
     <antcall target="deploy-jar-post"/> <!-- see ZG build.xml -->
