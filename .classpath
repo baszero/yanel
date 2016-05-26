@@ -85,5 +85,6 @@
 	<classpathentry kind="lib" path="/Users/baszero/.m2/repository/yarep/yarep-core/1.4.4-rad86f74baf45f5625305b9ef561784ea8b6013c8/yarep-core-1.4.4-rad86f74baf45f5625305b9ef561784ea8b6013c8.jar"/>
 	<classpathentry kind="lib" path="/Users/baszero/.m2/repository/yarep/yarep-impl/1.4.4-rad86f74baf45f5625305b9ef561784ea8b6013c8/yarep-impl-1.4.4-rad86f74baf45f5625305b9ef561784ea8b6013c8.jar"/>
 	<classpathentry kind="lib" path="/Users/baszero/.m2/repository/javax/servlet/servlet-api/3.0/servlet-api-3.0.1.jar"/>
+	<classpathentry kind="lib" path="/Users/baszero/.m2/repository/svnkit/svnkit/1.1.0/svnkit-1.1.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
