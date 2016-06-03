@@ -62,6 +62,7 @@ which java
 unset ANT_HOME
 export ANT_HOME=$SCRIPT_DIR/tools/apache-ant
 #echo $ANT_HOME
+#OUR_ANT="ant -verbose -lib $SCRIPT_DIR/tools/apache-ant_extras -f src/build/build.xml"
 OUR_ANT="ant -lib $SCRIPT_DIR/tools/apache-ant_extras -f src/build/build.xml"
 
 unset CATALINA_HOME
@@ -112,6 +113,7 @@ fi
 
   # Build everything by default
   echo "INFO: Building Yanel..."
+  echo "$OUR_ANT $@"
   $OUR_ANT "$@"
 
 elif [ "$1" = "cmdl" ]; then

@@ -92,15 +92,11 @@
       <!-- TODO: Add to yanel.xml, because these libs are only needed during runtime -->
       <dependency groupId="avalon-framework" artifactId="avalon-framework-api" version="4.3"/>
       <dependency groupId="avalon-framework" artifactId="avalon-framework-impl" version="4.3"/>
-      <dependency groupId="apache-jakarta-commons" artifactId="apache-jakarta-commons-discovery"
-                  version="0.2"/>
-      <dependency groupId="apache-jakarta-commons" artifactId="apache-jakarta-commons-id"
-                  version="0.1-dev-lcr357257"/>
-      <dependency groupId="apache-jakarta-commons" artifactId="apache-jakarta-commons-logging"
-                  version="1.0.4"/>
+      <dependency groupId="apache-jakarta-commons" artifactId="apache-jakarta-commons-discovery" version="0.2"/>
+      <dependency groupId="apache-jakarta-commons" artifactId="apache-jakarta-commons-id" version="0.1-dev-lcr357257"/>
+      <dependency groupId="apache-jakarta-commons" artifactId="apache-jakarta-commons-logging" version="1.0.4"/>
       <dependency groupId="commons-io" artifactId="commons-io" version="1.2"/>
-      <dependency groupId="xml-resolver" artifactId="xml-resolver"
-                  version="1.1"/>
+      <dependency groupId="xml-resolver" artifactId="xml-resolver" version="1.1"/>
 <!-- The XSLT engine of Java on MacOS X seems to have trouble. With Xalan enabled it should work! Also Abdera seems to need Xalan ... -->
 <!-- IMPORTANT: Please also see src/build/targets/webapp/webapp.xml re ambiguous libs -->
       <dependency groupId="xalan" artifactId="xalan" version="2.7.1"/>
@@ -109,20 +105,13 @@
       <dependency groupId="wyona-org-security" artifactId="wyona-org-security-util" version="1.5.4-r173cf3f249c11d61f48f59f66e58b8d737549272"/>
       <!-- IMPORTANT: Please make sure to update pom-core.xml as well! -->
       <dependency groupId="yarep" artifactId="yarep-impl" version="1.4.4-rad86f74baf45f5625305b9ef561784ea8b6013c8"/>
-      <dependency groupId="spring" artifactId="spring"
-                  version="2.0"/>
-      <dependency groupId="svnkit" artifactId="svnkit"
-                  version="1.1.0"/>
-      <dependency groupId="xindice" artifactId="xmldb"
-                  version="1.0"/>
-      <dependency groupId="xindice" artifactId="xindice"
-                  version="1.1b4"/>
-      <dependency groupId="stax" artifactId="${stax-impl.artifactId}"
-                  version="${stax-impl.version}"/>
-      <dependency groupId="stax" artifactId="${stax-api.artifactId}"
-                  version="${stax-api.version}"/>
-      <dependency groupId="jakarta" artifactId="jakarta-regexp"
-                  version="1.4"/>
+      <dependency groupId="spring" artifactId="spring" version="2.0"/>
+      <dependency groupId="svnkit" artifactId="svnkit" version="1.1.0"/>
+      <dependency groupId="xindice" artifactId="xmldb" version="1.0"/>
+      <dependency groupId="xindice" artifactId="xindice" version="1.1b4"/>
+      <dependency groupId="stax" artifactId="${stax-impl.artifactId}" version="${stax-impl.version}"/>
+      <dependency groupId="stax" artifactId="${stax-api.artifactId}" version="${stax-api.version}"/>
+      <dependency groupId="jakarta" artifactId="jakarta-regexp" version="1.4"/>
       <dependency groupId="commons-jelly" artifactId="commons-jelly" version="1.0"/>
       <dependency groupId="commons-jexl" artifactId="commons-jexl" version="1.0"/>
       <dependency groupId="commons-beanutils" artifactId="commons-beanutils" version="1.6"/>

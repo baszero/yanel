@@ -50,7 +50,7 @@
 -->
     <antcall target="webapp-configuration"/>
 
-    <copy todir="${build.dir}/webapps/${servlet.context.prefix}/WEB-INF/lib">
+    <copy todir="${build.dir}/webapps/${servlet.context.prefix}/WEB-INF/lib" verbose="true">
       <fileset refid="maven2.fileset"/>
       <mapper type="flatten"/>
     </copy>
@@ -67,7 +67,7 @@
   <target name="webapp-configuration" depends="init">
     <copy file="${yanel.source.home}/conf/CatalogManager.properties" todir="${build.dir}/webapps/${servlet.context.prefix}/WEB-INF/classes" overwrite="false"/>
     <copy file="${yanel.source.home}/conf/catalog.xml" todir="${build.dir}/webapps/${servlet.context.prefix}/WEB-INF/classes" overwrite="false"/>
-    <copy todir="${build.dir}/webapps/${servlet.context.prefix}/WEB-INF/classes/entities" overwrite="false">
+    <copy todir="${build.dir}/webapps/${servlet.context.prefix}/WEB-INF/classes/entities" overwrite="false" verbose="true">
       <fileset dir="${yanel.source.home}/conf/entities"/>
     </copy>
 
@@ -159,7 +159,7 @@
   </target>
 
   <target name="copy-basic-webapp-libs" description="Copy basic webapp libraries (core, impl, webapp)" depends="init">
-    <copy todir="${build.dir}/webapps/${servlet.context.prefix}/WEB-INF/lib">
+    <copy todir="${build.dir}/webapps/${servlet.context.prefix}/WEB-INF/lib" verbose="true">
       <fileset dir="${yanel.source.home}/build/lib">
         <include name="yanel-core-${yanel.source.version}.jar"/>
         <include name="yanel-impl-${yanel.source.version}.jar"/>

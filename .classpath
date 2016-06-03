@@ -54,7 +54,6 @@
 	<classpathentry kind="lib" path="/Users/baszero/.m2/repository/wyona-org-meguni/wyona-org-meguni/0.1-r41793/wyona-org-meguni-0.1-r41793.jar" sourcepath="/Users/baszero/.m2/repository/wyona-org-meguni/wyona-org-meguni/0.1-r41793/wyona-org-meguni-0.1-r41793-sources.jar"/>
 	<classpathentry kind="lib" path="/Users/baszero/.m2/repository/xml-resolver/xml-resolver/1.1/xml-resolver-1.1.jar" sourcepath="/Users/baszero/.m2/repository/xml-resolver/xml-resolver/1.1/xml-resolver-1.1-sources.jar"/>
 	<classpathentry kind="lib" path="/Users/baszero/.m2/repository/zwischengas/json_simple/1.1/json_simple-1.1.jar" sourcepath="/Users/baszero/.m2/repository/zwischengas/json_simple/1.1/json_simple-1.1-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/baszero/.m2/repository/zwischengas/metadata-extractor/2.3.1/metadata-extractor-2.3.1.jar" sourcepath="/Users/baszero/.m2/repository/zwischengas/metadata-extractor/2.3.1/metadata-extractor-2.3.1-sources.jar"/>
 	<classpathentry kind="lib" path="/Users/baszero/.m2/repository/zwischengas/urlrewrite/3.2.0/urlrewrite-3.2.0.jar" sourcepath="/Users/baszero/.m2/repository/zwischengas/urlrewrite/3.2.0/urlrewrite-3.2.0-sources.jar"/>
 	<classpathentry kind="lib" path="/Users/baszero/.m2/repository/wyona-org-commons/wyona-org-commons/1.0-dev-r59402/wyona-org-commons-1.0-dev-r59402.jar"/>
 	<classpathentry kind="lib" path="/Users/baszero/.m2/repository/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1.jar"/>
@@ -86,5 +85,6 @@
 	<classpathentry kind="lib" path="/Users/baszero/.m2/repository/yarep/yarep-impl/1.4.4-rad86f74baf45f5625305b9ef561784ea8b6013c8/yarep-impl-1.4.4-rad86f74baf45f5625305b9ef561784ea8b6013c8.jar"/>
 	<classpathentry kind="lib" path="/Users/baszero/.m2/repository/javax/servlet/servlet-api/3.0/servlet-api-3.0.1.jar"/>
 	<classpathentry kind="lib" path="/Users/baszero/.m2/repository/svnkit/svnkit/1.1.0/svnkit-1.1.0.jar"/>
+	<classpathentry kind="lib" path="/Users/baszero/.m2/repository/com/drewnoakes/metadata-extractor/2.9.1/metadata-extractor-2.9.1.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
