@@ -20,7 +20,7 @@
 </changes>
 
 <realm id="zwischengas" mount-point="/" root="true">
-  <config src="/Users/baszero/development/git/_upgrade/zwischengas/" />
+  <config src="/Users/baszero/development/git/zwischengas/" />
 </realm>
 
 

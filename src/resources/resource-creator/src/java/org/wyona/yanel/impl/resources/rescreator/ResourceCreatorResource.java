@@ -50,7 +50,7 @@ import org.xml.sax.helpers.XMLReaderFactory;
 /**
  *
  */
-public class ResourceCreatorResource extends Resource implements ViewableV2{
+public class ResourceCreatorResource extends Resource implements ViewableV2 {
 
     private static Logger log = LogManager.getLogger(ResourceCreatorResource.class);
 
@@ -476,8 +476,10 @@ public class ResourceCreatorResource extends Resource implements ViewableV2{
         String resNamespace = rtps.substring(0, rtps.indexOf("::"));
         String resName = rtps.substring(rtps.indexOf("::") + 2);
         Resource newResource = yanel.getResourceManager().getResource(getEnvironment(), realm, pathOfNewResource.toString(), new ResourceConfiguration(resName, resNamespace, null));
+        
 
         if (newResource != null) {
+            if (log.isDebugEnabled()) log.debug("newResource = " + newResource.getClass());
             if (ResourceAttributeHelper.hasAttributeImplemented(newResource, "Creatable", "2")) {
                 createName = ((CreatableV2) newResource).getCreateName(createName);
                 if (createName != null && createName.equals("")) {
@@ -514,6 +516,7 @@ public class ResourceCreatorResource extends Resource implements ViewableV2{
                 throw new Exception("creation NOT successfull!");
             }
         } else {
+            if (log.isDebugEnabled()) log.debug("newResource = null, ERROR!");
             throw new Exception("creation NOT successful (newResource == null)!");
 
         }
