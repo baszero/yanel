@@ -21,15 +21,15 @@
   </appenders>
 
   <loggers>
-    <logger name="org.apache.log4j.xml" level="debug">
+    <logger name="org.apache.log4j.xml" level="debug" additivity="false">
       <appender-ref ref="A1"/>
     </logger>
 
-    <logger name="org.wyona.yanel.core.ResourceTypeRegistry" level="info">
+    <logger name="org.wyona.yanel.core.ResourceTypeRegistry" level="info" additivity="false">
       <appender-ref ref="A1"/>
     </logger>
 
-    <logger name="com.zwischengas" level="info">
+    <logger name="com.zwischengas" level="info" additivity="false">
       <appender-ref ref="A1"/>
     </logger>
 
