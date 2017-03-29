@@ -15,11 +15,9 @@
  */
 package org.wyona.yanel.servlet;
 
-import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.URL;
@@ -31,7 +29,6 @@ import java.util.Iterator;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -43,10 +40,24 @@ import javax.xml.transform.sax.SAXTransformerFactory;
 import javax.xml.transform.sax.TransformerHandler;
 import javax.xml.transform.stream.StreamSource;
 
+import org.apache.commons.io.FilenameUtils;
+import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.ThreadContext;
+import org.apache.xalan.transformer.TransformerIdentityImpl;
+import org.apache.xml.resolver.tools.CatalogResolver;
+import org.apache.xml.serializer.Serializer;
+import org.quartz.Scheduler;
+import org.quartz.impl.StdSchedulerFactory;
+//import org.apache.commons.io.IOUtils;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.wyona.commons.xml.XMLHelper;
-
 import org.wyona.neutron.XMLExceptionV1;
-
+import org.wyona.security.core.api.Identity;
+import org.wyona.security.core.api.Usecase;
+import org.wyona.security.core.api.User;
+import org.wyona.security.core.api.UserManager;
 import org.wyona.yanel.core.Environment;
 import org.wyona.yanel.core.Path;
 import org.wyona.yanel.core.Resource;
@@ -58,8 +69,8 @@ import org.wyona.yanel.core.StateOfView;
 import org.wyona.yanel.core.ToolbarState;
 import org.wyona.yanel.core.Yanel;
 import org.wyona.yanel.core.api.attributes.AnnotatableV1;
-import org.wyona.yanel.core.api.attributes.IntrospectableV1;
 import org.wyona.yanel.core.api.attributes.DeletableV1;
+import org.wyona.yanel.core.api.attributes.IntrospectableV1;
 import org.wyona.yanel.core.api.attributes.ModifiableV1;
 import org.wyona.yanel.core.api.attributes.ModifiableV2;
 import org.wyona.yanel.core.api.attributes.TranslatableV1;
@@ -70,10 +81,12 @@ import org.wyona.yanel.core.api.attributes.ViewableV1;
 import org.wyona.yanel.core.api.attributes.ViewableV2;
 import org.wyona.yanel.core.api.attributes.WorkflowableV1;
 import org.wyona.yanel.core.api.security.WebAuthenticator;
+import org.wyona.yanel.core.attributes.tracking.TrackingInformationV1;
 import org.wyona.yanel.core.attributes.versionable.RevisionInformation;
 import org.wyona.yanel.core.attributes.viewable.View;
 import org.wyona.yanel.core.attributes.viewable.ViewDescriptor;
-import org.wyona.yanel.core.attributes.tracking.TrackingInformationV1;
+import org.wyona.yanel.core.map.Map;
+import org.wyona.yanel.core.map.Realm;
 import org.wyona.yanel.core.navigation.Node;
 import org.wyona.yanel.core.navigation.Sitetree;
 import org.wyona.yanel.core.serialization.SerializerFactory;
@@ -83,51 +96,14 @@ import org.wyona.yanel.core.transformation.I18nTransformer2;
 import org.wyona.yanel.core.util.ConfigurationUtil;
 import org.wyona.yanel.core.util.DateUtil;
 import org.wyona.yanel.core.util.HttpServletRequestHelper;
+import org.wyona.yanel.core.util.ResourceAttributeHelper;
 import org.wyona.yanel.core.workflow.Workflow;
 import org.wyona.yanel.core.workflow.WorkflowException;
 import org.wyona.yanel.core.workflow.WorkflowHelper;
-import org.wyona.yanel.core.map.Map;
-import org.wyona.yanel.core.map.Realm;
-import org.wyona.yanel.core.map.ReverseProxyConfig;
-import org.wyona.yanel.core.util.ResourceAttributeHelper;
-
 import org.wyona.yanel.impl.resources.BasicGenericExceptionHandlerResource;
-
-import org.wyona.yanel.servlet.IdentityMap;
 import org.wyona.yanel.servlet.communication.HttpRequest;
 import org.wyona.yanel.servlet.communication.HttpResponse;
 import org.wyona.yanel.servlet.security.impl.AutoLogin;
-
-import org.wyona.security.core.api.Identity;
-import org.wyona.security.core.api.Usecase;
-import org.wyona.security.core.api.User;
-import org.wyona.security.core.api.UserManager;
-
-import org.apache.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.ThreadContext;
-
-import org.apache.xalan.transformer.TransformerIdentityImpl;
-import org.apache.xml.resolver.tools.CatalogResolver;
-import org.apache.xml.serializer.Serializer;
-
-import org.apache.avalon.framework.configuration.Configuration;
-import org.apache.avalon.framework.configuration.DefaultConfiguration;
-import org.apache.avalon.framework.configuration.DefaultConfigurationBuilder;
-import org.apache.avalon.framework.configuration.DefaultConfigurationSerializer;
-import org.apache.avalon.framework.configuration.MutableConfiguration;
-import org.apache.commons.io.FilenameUtils;
-//import org.apache.commons.io.IOUtils;
-import org.apache.commons.io.output.ByteArrayOutputStream;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-
-import org.quartz.JobDetail;
-import org.quartz.Scheduler;
-import org.quartz.SimpleTrigger;
-import org.quartz.Trigger;
-import org.quartz.impl.StdSchedulerFactory;
 
 /**
  * Main entry point of Yanel webapp (see method 'service')
