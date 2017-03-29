@@ -50,6 +50,19 @@
 -->
         <!-- Javamelody END -->
 
+
+
+  <!-- Servlet for Multipart Image Uploads -->
+  <servlet>
+    <servlet-name>ImageUploaderServlet</servlet-name>
+    <servlet-class>com.zwischengas.resource.imageuploader.ImageUploaderServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ImageUploaderServlet</servlet-name>
+    <url-pattern>/imageuploader</url-pattern>
+  </servlet-mapping>
+  
+  
   <servlet>
     <servlet-name>YanelServlet</servlet-name>
     <servlet-class>org.wyona.yanel.servlet.YanelServlet</servlet-class>
