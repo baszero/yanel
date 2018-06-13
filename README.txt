@@ -1,7 +1,7 @@
-
     YANEL  README
     =============
-
+    Git Branches:
+    - jpguploader: not used, solved differently
 
     Requirements and Prerequisites
     ------------------------------
