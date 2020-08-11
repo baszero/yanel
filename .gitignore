@@ -7,7 +7,7 @@ local
 logs
 
 # local Yanel build configuration
-src/build/local.build.properties
+#src/build/local.build.properties
 
 # build directories of resources
 */*/*/build
