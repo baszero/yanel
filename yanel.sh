@@ -75,6 +75,7 @@ PATH=$SCRIPT_DIR/tools/maven-2.0.4/bin:$ANT_HOME/bin:$PATH
 $OUR_ANT -version
 if [ "$1" = "start" ]; then
   echo "INFO: Starting Yanel..."
+  echo "INFO: Command = $OUR_ANT start-tomcat"
   $OUR_ANT start-tomcat
 elif [ "$1" = "stop" ]; then
   echo "INFO: Stopping Yanel..."
