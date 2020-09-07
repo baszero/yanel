@@ -38,6 +38,9 @@
       <dependency groupId="ant" artifactId="ant" version="1.7.0"/>
       <dependency groupId="ant" artifactId="ant-launcher" version="1.7.0"/>
       <dependency groupId="ant" artifactId="ant-junit" version="1.7.0"/>
+    	
+		<dependency groupId="xalan" artifactId="serializer" version="2.7.1" />
+    	
     </artifact:dependencies>
 
     <property name="maven2.cp" refid="maven2.classpath"/>

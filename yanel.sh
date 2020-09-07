@@ -5,7 +5,7 @@ SCRIPT_DIR=$PWD
 
 #JAVA_HOME_MACOSX=/System/Library/Frameworks/JavaVM.framework/Home
 # macOS: Find out the Java Home via /usr/libexec/java_home -v 1.8 
-JAVA_HOME_MACOSX=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home
+JAVA_HOME_MACOSX=/Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdk/Contents/Home
 
 # ----- Check for JAVA_HOME
 JAVA_HOME="$JAVA_HOME_MACOSX"
