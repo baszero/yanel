@@ -24,16 +24,19 @@
             http://marcus-christie.blogspot.com/2006/08/using-ant-with-maven-1-and-maven-2.html
     -->
     <artifact:remoteRepository id="wyona.remote.repository" url="${maven.url}"/>
-<!-- WARN: The glassfish repository does not seem to be available sometimes, hence we have copied the moxy libraries to maven2.wyona.org
+		<artifact:remoteRepository id="zg.local" url="http://localhost:8088/repository/zg/"/>
+
+  	<!-- WARN: The glassfish repository does not seem to be available sometimes, hence we have copied the moxy libraries to maven2.wyona.org
     <artifact:remoteRepository id="glassfish.repository" url="http://maven.glassfish.org/content/repositories/eclipselink/"/>
 -->
 <!-- INFO: mvnrepository seems to be rather slow
     <artifact:remoteRepository id="mvnrepository.repository" url="http://mvnrepository.com/artifact/"/>
--->
 
+-->
     <!-- dependencies which are only needed at compile time, but won't be copied to WEB-INF/lib -->
     <artifact:dependencies pathId="maven2.compile.classpath" filesetId="maven2.compile.fileset">
-      <remoteRepository refid="wyona.remote.repository"/>
+        <remoteRepository refid="wyona.remote.repository"/>
+		<remoteRepository refid="zg.local"/>
       <dependency groupId="javax.servlet" artifactId="servlet-api" version="3.0" scope="provided"/>
 <!--
       <dependency groupId="javax.servlet" artifactId="javax.servlet-api" version="3.0.1" scope="provided"/>
@@ -41,8 +44,10 @@
     </artifact:dependencies>
     
     <artifact:dependencies pathId="maven2.classpath" filesetId="maven2.fileset">
-      <remoteRepository refid="wyona.remote.repository"/>
-<!--
+		<remoteRepository refid="zg.local"/>
+        <remoteRepository refid="wyona.remote.repository"/>
+
+    	<!--
       <remoteRepository refid="glassfish.repository"/>
 -->
 <!--
