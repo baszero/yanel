@@ -34,21 +34,15 @@
   <display-name>Yanel</display-name>
   <description>Yanel</description>
 
-        <!-- Javamelody START -->
-<!-- See http://lists.wyona.org/pipermail/yanel-development/2014-March/006193.html
-        <filter>
-          <filter-name>javamelody</filter-name>
-          <filter-class>net.bull.javamelody.MonitoringFilter</filter-class>
-        </filter>
-        <filter-mapping>
-          <filter-name>javamelody</filter-name>
-          <url-pattern>/*</url-pattern>
-        </filter-mapping>
-        <listener>
-          <listener-class>net.bull.javamelody.SessionListener</listener-class>
-        </listener>
--->
-        <!-- Javamelody END -->
+  <!-- JPG-Uploader Servlet for Multipart Image Uploads -->
+  <servlet>
+    <servlet-name>ImageUploaderServlet</servlet-name>
+    <servlet-class>com.zwischengas.resource.imageuploader.ImageUploaderServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ImageUploaderServlet</servlet-name>
+    <url-pattern>/imageuploader</url-pattern>
+  </servlet-mapping>
 
   <servlet>
     <servlet-name>YanelServlet</servlet-name>
