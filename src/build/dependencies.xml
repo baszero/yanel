@@ -55,12 +55,14 @@
       <dependency groupId="org.bouncycastle" artifactId="bcpg-jdk16" version="1.46"/>
 
       <!-- INFO: log4j version 2 -->
-      <dependency groupId="org.apache.logging.log4j" artifactId="log4j-api" version="2.0-beta8"/>
-      <dependency groupId="org.apache.logging.log4j" artifactId="log4j-core" version="2.0-beta8"/>
+      <dependency groupId="org.apache.logging.log4j" artifactId="log4j-api" version="2.16.0"/>
+      <dependency groupId="org.apache.logging.log4j" artifactId="log4j-core" version="2.16.0"/>
 
       <!-- INFO: log4j version 1 -->
+    	<!--
       <dependency groupId="log4j" artifactId="log4j" version="1.2.16"/>
       <dependency groupId="org.slf4j" artifactId="slf4j-log4j12" version="1.5.8"/>
+    	-->
 <!--
       <dependency groupId="org.slf4j" artifactId="slf4j-log4j12" version="1.6.6"/>
 -->
@@ -155,13 +157,15 @@
       <!-- INFO: Contains resource: org.wyona.yanel.impl.resources.jellyadapterofcmdv3 -->
       <dependency groupId="wyona-org-yanel" artifactId="yanel-resource-creatable-modifiable-deletable-v3" version="1.0.2-rb2d454da168fb165faf1bc25b69191541507da60"/>
 
-      <!-- INFO: Log to Boost -->
+      <!-- INFO: Log to Boost 
+      -->
       <dependency groupId="wyona-com-boost" artifactId="Log4JAppender" version="4.9.0-r0ec55e61af5"/>
       <dependency groupId="wyona-com-boost" artifactId="Log4JParsingUtils" version="2.0.5-r197413947b9"/>
       <dependency groupId="wyona-com-boost" artifactId="MessageUtils" version="2.0.5-r197413947b9"/>
 
       <!-- INFO: Get information from Boost -->
-      <!-- IMPORTANT: Please make sure to update pom-core.xml as well! -->
+      <!-- IMPORTANT: Please make sure to update pom-core.xml as well! 
+      -->
       <dependency groupId="wyona-com-boost" artifactId="BoostClient" version="2.0.0-rb466a3a3f6e"/>
     </artifact:dependencies>
     

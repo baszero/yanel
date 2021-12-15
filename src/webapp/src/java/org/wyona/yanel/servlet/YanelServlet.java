@@ -106,7 +106,6 @@ import org.wyona.security.core.api.UserManager;
 import org.apache.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.ThreadContext;
-
 import org.apache.xalan.transformer.TransformerIdentityImpl;
 import org.apache.xml.resolver.tools.CatalogResolver;
 import org.apache.xml.serializer.Serializer;
@@ -436,7 +435,7 @@ public class YanelServlet extends HttpServlet {
             log.error(e, e);
             throw new IOException(e.getMessage());
         } finally {
-            ThreadContext.clear();
+            ThreadContext.clearAll();
         } // NOTE: This was our last chance to log an exception, hence do not add code outside the try-catch block
     }
 

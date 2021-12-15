@@ -129,6 +129,9 @@
 
 
   <target name="compile-core-classes" description="Compile Java classes of Yanel core" depends="init, set-classpath">
+  	<property name="mycp" refid="classpath.compile"/>
+  	<echo>Compiling CORE classes</echo>
+  	<echo>Classpath = ${mycp}</echo>
     <mkdir dir="${classes.dir}"/>
     <javac srcdir="${yanel.source.home}/src/core/java/org/wyona/yanel/core"
       destdir="${classes.dir}"
