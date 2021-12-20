@@ -25,6 +25,9 @@
 
   <!-- Initialize build -->
   <target name="init" depends="dependencies">
+  	
+  	<echo>Init Resource: ${resource.home.dir}</echo>
+  	
     <artifact:remoteRepository id="wyona.remote.repository" url="${maven.url}"/>
 
     <property file="${resource.home.dir}/src/build/local.build.properties"/>
@@ -158,7 +161,9 @@
   </target>
 
   <target name="copy-dependencies" depends="init" description="Copy resource depenedencies to Yanel webapp lib directory">
-    <copy todir="${yanel.build.dir}/webapps/${servlet.context.prefix}/WEB-INF/lib">
+    <property name="copy-list" value="${maven2.resource.fileset}"/>
+    
+  	<copy todir="${yanel.build.dir}/webapps/${servlet.context.prefix}/WEB-INF/lib">
       <fileset refid="maven2.resource.fileset"/>
       <mapper type="flatten"/>
     </copy>

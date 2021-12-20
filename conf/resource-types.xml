@@ -51,60 +51,66 @@
 
   <!-- HEADSUP: Make sure to add the trailing slash (/) in the @src attribute! -->
   <resource-type package="org.wyona.yanel.impl.resources.jellyadapterofcmdv3"/> <!-- INFO: This resource is loaded as dependency via src/build/dependencies.xml. IMPORTANT: Please make sure that when building it from source to set copy.resource-type-configs.to.webapp=true inside src/build/local.build.properties such that the jar file will contain the resource configuration and hence registration will be possible!  -->
-  <resource-type src="@YANEL_SRC_DIR@/src/resources/mailman/" compile="true"/>
-  <resource-type src="@YANEL_SRC_DIR@/src/resources/cas/" compile="true"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/scheduler/" compile="true"/>
-  <resource-type src="@YANEL_SRC_DIR@/src/resources/registration/" compile="true"/>
-  <resource-type src="@YANEL_SRC_DIR@/src/resources/personalized-content/" compile="true"/>
-  <resource-type src="@YANEL_SRC_DIR@/src/resources/workflow-dashboard/" compile="true"/>
-  <resource-type src="@YANEL_SRC_DIR@/src/resources/comment/" compile="true"/>
-  <resource-type src="@YANEL_SRC_DIR@/src/resources/pageMetaDataManager/" compile="true"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/security-api/" compile="true"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/search/" compile="true"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/nutch/" compile="true" copy-dir-name="yanel-nutch"/>
-  <resource-type src="@YANEL_SRC_DIR@/src/resources/lookup/" compile="true" copy-dir-name="yanel-lookup"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/tinymce/" compile="true" copy-dir-name="yanel-tinymce"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/xml-source-editor/" compile="true" copy-dir-name="xml-source-editor"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/image/" compile="true"/>
-  <resource-type src="@YANEL_SRC_DIR@/src/resources/xinha/" compile="true" copy-dir-name="yanel-xinha"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/sessionmanager/" compile="true" copy-dir-name="yanel-sessionmanager"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/404/" compile="true"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/generic-exception-handler/" compile="true"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/policymanager/" compile="true" copy-dir-name="yanel-policymanager"/>
-  <resource-type src="@YANEL_SRC_DIR@/src/resources/timeline/" compile="true" copy-dir-name="yanel-timeline"/>
-  <resource-type src="@YANEL_SRC_DIR@/src/resources/data-repo-sitetree/" compile="true" copy-dir-name="yanel-data-repo-sitetree"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/navigation/" compile="true" copy-dir-name="yanel-navigation"/>
-  <resource-type src="@YANEL_SRC_DIR@/src/resources/translation/" compile="true" copy-dir-name="yanel-translation"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/file/" compile="true"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/directory/" compile="true" copy-dir-name="yanel-collection"/>
 
   <!-- TODO: Move this to the welcome realm?! -->
   <resource-type src="@YANEL_SRC_DIR@/src/resources/add-realm/" compile="true" copy-dir-name="yanel-add-realm"/>
 
-  <resource-type src="@YANEL_SRC_DIR@/src/resources/odt/" compile="true" copy-dir-name="yanel-odt"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/xml/" compile="true" copy-dir-name="yanel-xml"/>
-  <resource-type src="@YANEL_SRC_DIR@/src/resources/user-mgmt/" compile="true" copy-dir-name="yanel-user-mgmt"/>
+  <resource-type src="@YANEL_SRC_DIR@/src/resources/login/" compile="true"/>
+
+  <!-- IMPORTANT: Please note that forgotpw depends on contact-form and hence the build order matters! -->
+
+
+  <resource-type src="@YANEL_SRC_DIR@/src/resources/yanel-user/" compile="true" copy-dir-name="yanel-yanel-user"/>
+  <resource-type src="@YANEL_SRC_DIR@/src/resources/redirect/" compile="true"/>
+
+  <resource-type src="@YANEL_SRC_DIR@/src/resources/resource-creator/" compile="true"/>
+  <resource-type src="@YANEL_SRC_DIR@/src/resources/resource-revisions/" compile="true"/>
+
+  <resource-type src="@YANEL_SRC_DIR@/src/resources/lookup/" compile="true" copy-dir-name="yanel-lookup"/>
+  <resource-type src="@YANEL_SRC_DIR@/src/resources/davcollection/" compile="true" copy-dir-name="yanel-davcollection"/>
+  <resource-type src="@YANEL_SRC_DIR@/src/resources/mailman/" compile="true"/>
+  <resource-type src="@YANEL_SRC_DIR@/src/resources/translation/" compile="true" copy-dir-name="yanel-translation"/>
+  <resource-type src="@YANEL_SRC_DIR@/src/resources/comment/" compile="true"/>
+  <resource-type src="@YANEL_SRC_DIR@/src/resources/registration/" compile="true"/>
+  <resource-type src="@YANEL_SRC_DIR@/src/resources/cas/" compile="true"/>
+  <resource-type src="@YANEL_SRC_DIR@/src/resources/personalized-content/" compile="true"/>
+  <resource-type src="@YANEL_SRC_DIR@/src/resources/workflow-dashboard/" compile="true"/>
+  <resource-type src="@YANEL_SRC_DIR@/src/resources/pageMetaDataManager/" compile="true"/>
+  <resource-type src="@YANEL_SRC_DIR@/src/resources/timeline/" compile="true" copy-dir-name="yanel-timeline"/>
+  <resource-type src="@YANEL_SRC_DIR@/src/resources/data-repo-sitetree/" compile="true" copy-dir-name="yanel-data-repo-sitetree"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/testing-control/" compile="true" copy-dir-name="yanel-testing-control"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/testing-times/" compile="true" copy-dir-name="yanel-testing-times"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/atom/" compile="true" copy-dir-name="yanel-atom"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/atom-entry/" compile="true" copy-dir-name="yanel-atom-entry"/>
-
-  <resource-type src="@YANEL_SRC_DIR@/src/resources/contact-form/" compile="true" copy-dir-name="yanel-contact-form"/>
-  <!-- IMPORTANT: Please note that forgotpw depends on contact-form and hence the build order matters! -->
   <resource-type src="@YANEL_SRC_DIR@/src/resources/forgotpw/" compile="true"/>
-  <resource-type src="@YANEL_SRC_DIR@/src/resources/login/" compile="true"/>
-
+  <resource-type src="@YANEL_SRC_DIR@/src/resources/contact-form/" compile="true" copy-dir-name="yanel-contact-form"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/wiki/" compile="true" copy-dir-name="yanel-wiki"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/zip/" compile="true" copy-dir-name="yanel-zip"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/calendar/" compile="true" copy-dir-name="yanel-calendar"/>
-  <resource-type src="@YANEL_SRC_DIR@/src/resources/resource-creator/" compile="true"/>
-  <resource-type src="@YANEL_SRC_DIR@/src/resources/resource-revisions/" compile="true"/>
-  <resource-type src="@YANEL_SRC_DIR@/src/resources/davcollection/" compile="true" copy-dir-name="yanel-davcollection"/>
-
   <resource-type src="@YANEL_SRC_DIR@/src/resources/pdf/" compile="true" copy-dir-name="yanel-pdf"/>
-  <resource-type src="@YANEL_SRC_DIR@/src/resources/yanel-user/" compile="true" copy-dir-name="yanel-yanel-user"/>
-  <resource-type src="@YANEL_SRC_DIR@/src/resources/redirect/" compile="true"/>
 
+  <!-- Skipped on 17.12.2021 -->
+  <!-- 
+  <resource-type src="@YANEL_SRC_DIR@/src/resources/odt/" compile="true" copy-dir-name="yanel-odt"/> 
+  <resource-type src="@YANEL_SRC_DIR@/src/resources/user-mgmt/" compile="true" copy-dir-name="yanel-user-mgmt"/>
+  <resource-type src="@YANEL_SRC_DIR@/src/resources/xinha/" compile="true" copy-dir-name="yanel-xinha"/>
+  -->
+  
   <!-- Google Web Toolkit sandbox resource type -->
 <!--
   <resource-type src="@YANEL_SRC_DIR@/src/resources/GWT-sandbox/" compile="true"/>
