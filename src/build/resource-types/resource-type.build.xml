@@ -161,8 +161,6 @@
   </target>
 
   <target name="copy-dependencies" depends="init" description="Copy resource depenedencies to Yanel webapp lib directory">
-    <property name="copy-list" value="${maven2.resource.fileset}"/>
-    
   	<copy todir="${yanel.build.dir}/webapps/${servlet.context.prefix}/WEB-INF/lib">
       <fileset refid="maven2.resource.fileset"/>
       <mapper type="flatten"/>
