@@ -26,7 +26,8 @@
   <!-- Initialize build -->
   <target name="init" depends="dependencies">
   	
-  	<echo>Init Resource: ${resource.home.dir}</echo>
+  	<echo>================================================================</echo>
+  	<echo>Init RESOURCE: ${resource.home.dir}</echo>
   	
     <artifact:remoteRepository id="wyona.remote.repository" url="${maven.url}"/>
 
