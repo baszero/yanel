@@ -70,7 +70,9 @@
     
   <target name="init" description="Initialize all parameters and other settings">
     <echo>=============================================================================</echo>
-    <echo>INFO: Building YANEL with ${ant.version} and Java version ${ant.java.version} (JAVA_HOME=${java.home}, User: ${user.name})</echo>
+    <echo>INFO: Building YANEL with ${ant.version} and Ant Java version ${ant.java.version}</echo>
+    <echo>INFO: JAVA_HOME=${java.home}, User: ${user.name}</echo>
+    <echo>INFO: Compiling Yanel for Java Version ${target.java.version}</echo>
 
     <echo>Yanel Home Dir: ${yanel.source.home}</echo>
     <path id="yanel.source.home.ref">
