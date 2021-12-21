@@ -170,8 +170,6 @@
   </target>
 
   <target name="war" description="Build war file" depends="init, webapp">
-    <echo>=====================================================</echo>
-    <echo>Building WAR based on ${yanel.source.home}/build/webapps/${servlet.context.prefix}</echo>
     <jar jarfile="${yanel.source.home}/build/webapps/${servlet.context.prefix}.war" basedir="${yanel.source.home}/build/webapps/${servlet.context.prefix}"/>
   </target>
   
