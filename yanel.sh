@@ -4,7 +4,7 @@ SCRIPT_DIR=$PWD
 #SCRIPT_DIR=$PWD/`dirname $0`
 
 #JAVA_HOME_MACOSX=/System/Library/Frameworks/JavaVM.framework/Home
-JAVA_HOME_MACOSX=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home
+JAVA_HOME_MACOSX=/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home
 
 # ----- Check for JAVA_HOME
 JAVA_HOME="$JAVA_HOME_MACOSX"
