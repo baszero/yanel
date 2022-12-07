@@ -20,8 +20,12 @@
   <target name="dependencies" description="Dependencies" depends="proxy">
   	<echo>+++++ Yanel dependencies</echo>
 	<echo>+++++ using 2 Zwischengas Maven2 Repositories at http://test.zwischengas.com:8081</echo>
-	<artifact:remoteRepository id="zwischengas.custom" url="http://test.zwischengas.com:8081/repository/zwischengas/"/>
-	<artifact:remoteRepository id="zwischengas.maven" url="http://test.zwischengas.com:8081/repository/maven-central/"/>
+	<artifact:remoteRepository id="zwischengas.custom" url="http://test.zwischengas.com:8081/repository/zwischengas/">
+		<authentication username="admin" password="lemans1924" />
+	</artifact:remoteRepository>
+	<artifact:remoteRepository id="zwischengas.maven" url="http://test.zwischengas.com:8081/repository/maven-central/">
+		<authentication username="admin" password="lemans1924" />
+	</artifact:remoteRepository>
     <!--<artifact:remoteRepository id="wyona.remote.repository" url="${maven.url}"/>-->
   	
     <!-- dependencies which are only needed at compile time, but won't be copied to WEB-INF/lib -->
