@@ -3,7 +3,7 @@
 SCRIPT_DIR=$PWD
 #SCRIPT_DIR=$PWD/`dirname $0`
 
-JAVA_HOME_MACOSX=/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home
+JAVA_HOME_MACOSX=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home
 JAVA_HOME="$JAVA_HOME_MACOSX"
 export JAVA_HOME
 
