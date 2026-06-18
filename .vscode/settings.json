@@ -1,5 +1,6 @@
 {
   "java.jdt.ls.java.home": "/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home",
+  "java.import.maven.enabled": false,
   "java.configuration.runtimes": [
     {
       "name": "JavaSE-1.8",
