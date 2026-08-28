@@ -46,8 +46,6 @@ import org.apache.commons.io.IOUtils;
 import org.apache.xml.resolver.tools.CatalogResolver;
 
 
-import sun.util.logging.resources.logging;
-
 /**
  *
  */

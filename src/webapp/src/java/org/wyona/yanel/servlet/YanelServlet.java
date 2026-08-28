@@ -23,6 +23,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Enumeration;
@@ -1997,10 +1999,12 @@ public class YanelServlet extends HttpServlet {
             if (authorizationHeader.toUpperCase().startsWith("BASIC")) {
                 // Get encoded user and password, comes after "BASIC "
                 String userpassEncoded = authorizationHeader.substring(6);
-                // Decode it, using any base 64 decoder
-                sun.misc.BASE64Decoder dec = new sun.misc.BASE64Decoder();
-                String userpassDecoded = new String(dec.decodeBuffer(userpassEncoded));
-                log.debug("Username and Password Decoded: " + userpassDecoded);
+                // Decode it, using any base 64 decoder.
+                // INFO: java.util.Base64 (available since Java 8) replaces sun.misc.BASE64Decoder,
+                // which has been removed from the JDK with Java 9. getMimeDecoder() is used because,
+                // like the old decoder, it ignores all characters outside the base64 alphabet.
+                // The credentials are deliberately NOT logged.
+                String userpassDecoded = new String(Base64.getMimeDecoder().decode(userpassEncoded), StandardCharsets.UTF_8);
                 String[] up = userpassDecoded.split(":");
                 String username = up[0];
                 String password = up[1];
