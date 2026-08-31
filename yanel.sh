@@ -3,7 +3,14 @@
 SCRIPT_DIR=$PWD
 #SCRIPT_DIR=$PWD/`dirname $0`
 
-JAVA_HOME_MACOSX=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home
+# Diese eine Zeile bestimmt BEIDES: mit welchem JDK gebaut wird und, weil das Ant-Target
+# start-tomcat den Tomcat per <exec executable="startup.sh"> startet und dieser JAVA_HOME
+# erbt, auch mit welcher JVM Tomcat laeuft.
+# Java 25 seit 31.08.2026 (vorher zulu-8). Ant 1.7.1 aus tools/apache-ant laeuft darunter.
+# ACHTUNG: die Ausgabe "java -version" weiter unten kommt aus dem PATH, nicht aus JAVA_HOME -
+# massgeblich ist die Zeile "JAVA HOME = ..." darunter.
+JAVA_HOME_MACOSX=/Library/Java/JavaVirtualMachines/temurin-25.jdk/Contents/Home
+#JAVA_HOME_MACOSX=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home
 JAVA_HOME="$JAVA_HOME_MACOSX"
 export JAVA_HOME
 
