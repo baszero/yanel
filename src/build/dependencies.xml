@@ -104,7 +104,13 @@
       <dependency groupId="commons-beanutils" artifactId="commons-beanutils" version="1.6"/>
       <dependency groupId="commons-fileupload" artifactId="commons-fileupload" version="1.2"/>
       <dependency groupId="commons-lang" artifactId="commons-lang" version="2.5"/>
-      <dependency groupId="dom4j" artifactId="dom4j" version="1.5.2"/>
+      <!-- 01.09.2026: von 1.5.2 auf 1.6.1 angehoben. dom4j-1.5.2.jar steht in
+           duplicated.libs (build.properties) und wird nach dem Zusammenbau geloescht;
+           die tatsaechlich ausgelieferte 1.6.1 kam bis dahin nur transitiv ueber den
+           wiki-Resource-Type herein. Mit dessen Entfernung fehlte dom4j im WAR ganz,
+           und Jelly brach im Artikel-Editor mit NoClassDefFoundError auf
+           org/dom4j/io/XMLWriter ab. -->
+      <dependency groupId="dom4j" artifactId="dom4j" version="1.6.1"/>
 
       <!-- IMPORTANT: Please make sure to update pom-core.xml as well! -->
       <dependency groupId="org.quartz-scheduler" artifactId="quartz" version="2.1.5"/>
