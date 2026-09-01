@@ -92,14 +92,20 @@
   <resource-type src="@YANEL_SRC_DIR@/src/resources/workflow-dashboard/" compile="true"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/pageMetaDataManager/" compile="true"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/timeline/" compile="true" copy-dir-name="yanel-timeline"/>
-  <resource-type src="@YANEL_SRC_DIR@/src/resources/data-repo-sitetree/" compile="true" copy-dir-name="yanel-data-repo-sitetree"/>
+  <!-- ENTFERNT 01.09.2026 (Ansage des Users): wird von Zwischengas nicht benutzt -
+       keine einzige rti-Referenz in den RC-Dateien. Baute nur mit und brachte
+       ueber seine dependencies.xml das alte spring-2.0.jar mit.
+  <resource-type src="@YANEL_SRC_DIR@/src/resources/data-repo-sitetree/" compile="true" copy-dir-name="yanel-data-repo-sitetree"/> -->
   <resource-type src="@YANEL_SRC_DIR@/src/resources/testing-control/" compile="true" copy-dir-name="yanel-testing-control"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/testing-times/" compile="true" copy-dir-name="yanel-testing-times"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/atom/" compile="true" copy-dir-name="yanel-atom"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/atom-entry/" compile="true" copy-dir-name="yanel-atom-entry"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/forgotpw/" compile="true"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/contact-form/" compile="true" copy-dir-name="yanel-contact-form"/>
-  <resource-type src="@YANEL_SRC_DIR@/src/resources/wiki/" compile="true" copy-dir-name="yanel-wiki"/>
+  <!-- ENTFERNT 01.09.2026 (Ansage des Users): wird von Zwischengas nicht benutzt -
+       keine einzige rti-Referenz in den RC-Dateien. Baute nur mit und brachte
+       ueber seine dependencies.xml das alte spring-2.0.jar mit.
+  <resource-type src="@YANEL_SRC_DIR@/src/resources/wiki/" compile="true" copy-dir-name="yanel-wiki"/> -->
   <resource-type src="@YANEL_SRC_DIR@/src/resources/zip/" compile="true" copy-dir-name="yanel-zip"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/calendar/" compile="true" copy-dir-name="yanel-calendar"/>
   <resource-type src="@YANEL_SRC_DIR@/src/resources/pdf/" compile="true" copy-dir-name="yanel-pdf"/>
