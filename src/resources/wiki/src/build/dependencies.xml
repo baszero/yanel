@@ -15,8 +15,11 @@
     <artifact:dependencies pathId="maven2.resource.classpath" filesetId="maven2.resource.fileset">
       <remoteRepository refid="wyona.remote.repository"/>
 
-      <dependency groupId="spring" artifactId="spring"
-                  version="2.0"/>
+      <!-- ENTFERNT 01.09.2026: spring:spring:2.0 wurde von diesem Resource-Type gar nicht
+           benutzt (kein einziger org.springframework-Import), schleppte aber das
+           monolithische 2006er-Jar nach WEB-INF/lib. Dort ueberdeckte dessen
+           org.springframework.util.Assert die Fassung aus spring-core-3.0.6 und liess
+           Yanel unter Tomcat 9 mit NoSuchMethodError abbrechen. -->
       <dependency groupId="com-ecyrd-jspwiki" artifactId="JSPWiki-patched"
                   version="2.4.71-r25408"/>
 
