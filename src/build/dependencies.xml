@@ -54,6 +54,9 @@
 
       <dependency groupId="commons-logging" artifactId="commons-logging" version="1.1.1"/>
 
+      <!-- INFO: JAXB API - ab Java 11 nicht mehr im JDK (JEP 320), muss explizit deklariert werden -->
+      <dependency groupId="javax.xml.bind" artifactId="jaxb-api" version="2.2.2"/>
+
       <!-- INFO: JAXB implementation -->
       <dependency groupId="org.eclipse.persistence" artifactId="org.eclipse.persistence.moxy" version="2.3.2"/>
 
