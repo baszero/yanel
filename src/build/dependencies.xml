@@ -90,7 +90,9 @@
       <dependency groupId="wyona-org-security" artifactId="wyona-org-security-util" version="1.5.4-r173cf3f249c11d61f48f59f66e58b8d737549272"/>
       <!-- IMPORTANT: Please make sure to update pom-core.xml as well! -->
       <dependency groupId="yarep" artifactId="yarep-impl" version="1.4.4-rad86f74baf45f5625305b9ef561784ea8b6013c8"/>
-      <dependency groupId="spring" artifactId="spring" version="2.0"/>
+      <!-- ENTFERNT 01.09.2026: spring:spring:2.0 ueberdeckte org.springframework.util.Assert
+           aus spring-core-3.0.6 (gemessen mit -Xlog:class+load auf TEST) und brach Yanel
+           unter Tomcat 9 mit NoSuchMethodError ab. Der 3.0.6-Satz kommt transitiv. -->
       <dependency groupId="svnkit" artifactId="svnkit" version="1.1.0"/>
       <dependency groupId="xindice" artifactId="xmldb" version="1.0"/>
       <dependency groupId="xindice" artifactId="xindice" version="1.1b4"/>
