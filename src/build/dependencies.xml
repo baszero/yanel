@@ -131,9 +131,9 @@
            Zwischengas-Build referenzieren org.apache.commons.httpclient. -->
       <dependency groupId="commons-httpclient" artifactId="commons-httpclient" version="3.0.1"/>
 
-      <!-- java-openid-sxip referenziert org.apache.axiom; kam bisher ueber den
-           atom-Resource-Type. -->
-      <dependency groupId="ws-commons" artifactId="axiom-api" version="1.0"/>
+      <!-- axiom-api NICHT aufgenommen: org.apache.axiom wird nur von java-openid-sxip
+           referenziert, und OpenID benutzt Zwischengas nicht (einzige Fundstelle ist
+           Yanels DefaultWebAuthenticatorImpl, das der eigene Login ersetzt). -->
 
       <!-- IMPORTANT: Please make sure to update pom-core.xml as well! -->
       <dependency groupId="org.quartz-scheduler" artifactId="quartz" version="2.1.5"/>
