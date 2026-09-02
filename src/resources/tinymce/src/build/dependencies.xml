@@ -31,8 +31,8 @@
 
     <artifact:dependencies pathId="maven2.resource.classpath" filesetId="maven2.resource.fileset">
       <remoteRepository refid="wyona.remote.repository"/>
-      <dependency groupId="apache-jakarta-commons" artifactId="apache-jakarta-commons-lang" version="2.1"/>
-      <dependency groupId="apache-jakarta-commons" artifactId="apache-jakarta-commons-io" version="1.2"/>
+      <dependency groupId="commons-lang" artifactId="commons-lang" version="2.5"/>
+      <dependency groupId="commons-io" artifactId="commons-io" version="2.4"/>
       <dependency groupId="org.hibernate" artifactId="jtidy" version="r8-20060801"/>
       <dependency groupId="xml-resolver" artifactId="xml-resolver" version="1.1"/>
     </artifact:dependencies>
