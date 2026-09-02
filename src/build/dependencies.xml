@@ -149,6 +149,18 @@
            zugleich die Kollision 4.1.3/4.3.3/4.5.14 auf. -->
       <dependency groupId="org.apache.httpcomponents" artifactId="httpclient" version="4.5.14"/>
 
+      <!-- 02.09.2026: kam bisher nur transitiv ueber entfernte Resource-Types.
+           commons-collections wird von jackrabbit-core (44 Referenzen),
+           commons-beanutils-core (34), commons-configuration (20), commons-pool,
+           commons-jelly und commons-digester gebraucht. -->
+      <dependency groupId="commons-collections" artifactId="commons-collections" version="3.2.1"/>
+
+      <!-- xercesImpl wird von nekohtml (105 Referenzen), xalan-2.7.1,
+           jackrabbit-text-extractors, openxri-client und xom gebraucht. Die
+           JDK-internen com.sun.org.apache.xerces-Klassen sind kein Ersatz, die
+           Referenzen zeigen auf org.apache.xerces. -->
+      <dependency groupId="xerces" artifactId="xercesImpl" version="2.11.0"/>
+
       <!-- axiom-api NICHT aufgenommen: org.apache.axiom wird nur von java-openid-sxip
            referenziert, und OpenID benutzt Zwischengas nicht (einzige Fundstelle ist
            Yanels DefaultWebAuthenticatorImpl, das der eigene Login ersetzt). -->
