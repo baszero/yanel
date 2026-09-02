@@ -112,6 +112,29 @@
            org/dom4j/io/XMLWriter ab. -->
       <dependency groupId="dom4j" artifactId="dom4j" version="1.6.1"/>
 
+      <!-- 02.09.2026: diese vier kamen bisher nur ZUFAELLIG ueber Resource-Types herein,
+           die niemand benutzt (nutch, wiki, testing-control, atom, mailman). Beim Entfernen
+           dieser Resource-Types waeren sie verschwunden, obwohl sie gebraucht werden.
+           Nachgewiesen ueber den Referenzabschluss aller 67'088 Klassen im WAR r-1797. -->
+
+      <!-- ZWINGEND: einziger Lieferant von org.apache.lucene. Der Zwischengas-Realm
+           referenziert 101 Lucene-Klassen, yarep-impl 77, jackrabbit-core 410.
+           Ohne diese Zeile faellt die gesamte Suche und die Yarep-Indizierung aus. -->
+      <dependency groupId="org.apache.lucene" artifactId="lucene-core" version="2.9.2"/>
+
+      <!-- dom4j (DocumentFactory, DocumentHelper) und commons-jelly referenzieren
+           org.jaxen direkt. Beide bisherigen Lieferanten (nutch/testing-control mit
+           1.1-beta-10, wiki mit 1.1.1) fallen weg. -->
+      <dependency groupId="jaxen" artifactId="jaxen" version="1.1.1"/>
+
+      <!-- java-openid-sxip (Zeile weiter unten) und urlrewrite-3.2.0 aus dem
+           Zwischengas-Build referenzieren org.apache.commons.httpclient. -->
+      <dependency groupId="commons-httpclient" artifactId="commons-httpclient" version="3.0.1"/>
+
+      <!-- java-openid-sxip referenziert org.apache.axiom; kam bisher ueber den
+           atom-Resource-Type. -->
+      <dependency groupId="ws-commons" artifactId="axiom-api" version="1.0"/>
+
       <!-- IMPORTANT: Please make sure to update pom-core.xml as well! -->
       <dependency groupId="org.quartz-scheduler" artifactId="quartz" version="2.1.5"/>
 
