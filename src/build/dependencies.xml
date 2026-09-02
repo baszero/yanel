@@ -135,6 +135,20 @@
            Zwischengas-Build referenzieren org.apache.commons.httpclient. -->
       <dependency groupId="commons-httpclient" artifactId="commons-httpclient" version="3.0.1"/>
 
+      <!-- 02.09.2026: commons-codec kam bisher nur ueber die Resource-Types
+           sessionmanager und testing-control herein. Ohne die bleibt 1.3 uebrig, wo
+           Base64.decode(String) noch Object liefert - MailUtil.java:121 uebersetzt dann
+           nicht mehr. Version 1.10 gewaehlt, weil der Zwischengas-Build dieselbe
+           deklariert; damit entsteht auch keine neue Kollision. -->
+      <dependency groupId="commons-codec" artifactId="commons-codec" version="1.10"/>
+
+      <!-- 02.09.2026: der Yanel-Kern importiert org.apache.http.* (DefaultHttpClient,
+           HttpGet, HttpPost, StringEntity, params.*). httpclient kam bisher nur ueber den
+           mailman-Resource-Type (4.1.3). 4.5.14 gewaehlt: enthaelt alle importierten
+           Klassen, ist die Version, die ohnehin transitiv im WAR landet, und loest damit
+           zugleich die Kollision 4.1.3/4.3.3/4.5.14 auf. -->
+      <dependency groupId="org.apache.httpcomponents" artifactId="httpclient" version="4.5.14"/>
+
       <!-- axiom-api NICHT aufgenommen: org.apache.axiom wird nur von java-openid-sxip
            referenziert, und OpenID benutzt Zwischengas nicht (einzige Fundstelle ist
            Yanels DefaultWebAuthenticatorImpl, das der eigene Login ersetzt). -->
